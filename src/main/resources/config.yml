@@ -1,0 +1,74 @@
+# ZyElevators configuration
+# After editing, run /zyelevators reload
+
+# Language file to use from the lang/ folder (en, es, or your own file).
+language: en
+
+elevator:
+  # Blocks that can be elevators. Any solid block works.
+  # Only blocks placed from an elevator item become elevators, so normal
+  # wool (or any other block in this list) keeps working as usual.
+  blocks:
+    - WHITE_WOOL
+    - LIGHT_GRAY_WOOL
+    - GRAY_WOOL
+    - BLACK_WOOL
+    - BROWN_WOOL
+    - RED_WOOL
+    - ORANGE_WOOL
+    - YELLOW_WOOL
+    - LIME_WOOL
+    - GREEN_WOOL
+    - CYAN_WOOL
+    - LIGHT_BLUE_WOOL
+    - BLUE_WOOL
+    - PURPLE_WOOL
+    - MAGENTA_WOOL
+    - PINK_WOOL
+
+  # true: an elevator only connects with elevators of the same block,
+  # so you can build several independent lines with different colors.
+  same-block-only: true
+
+  # Maximum number of blocks between two connected elevators.
+  max-distance: 64
+
+  # Seconds a player has to wait between uses.
+  cooldown: 1.0
+
+  # Directions players can travel.
+  jump-to-go-up: true
+  sneak-to-go-down: true
+
+  # Skip destinations without two free blocks above them (no suffocation).
+  safe-destination: true
+
+  # true: explosions don't destroy elevators.
+  # false: they break and drop the elevator item.
+  explosion-proof: true
+
+  # Worlds where elevators don't work.
+  disabled-worlds: []
+
+item:
+  # Enchantment glint on elevator items, so they stand out from normal blocks.
+  glint: true
+
+crafting:
+  enabled: true
+  # Recipe: 8 elevator blocks around this item, in a crafting table.
+  center: ENDER_PEARL
+  amount: 1
+
+effects:
+  sound:
+    enabled: true
+    # Any sound key, including custom resource pack sounds.
+    key: entity.enderman.teleport
+    volume: 0.5
+    pitch: 1.2
+  particles:
+    # Arrow drawn above the destination elevator.
+    enabled: true
+    up-color: "#55FF55"
+    down-color: "#FF5555"

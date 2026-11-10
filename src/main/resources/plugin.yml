@@ -1,0 +1,31 @@
+name: ZyElevators
+version: '${project.version}'
+main: dev.skzyy.zyelevators.ZyElevators
+api-version: '1.21'
+folia-supported: true
+author: Skzyy
+description: Jump to go up, sneak to go down. Lightweight elevators for Paper and Folia.
+website: https://github.com/Skzyyx/ZyElevators
+
+commands:
+  zyelevators:
+    description: ZyElevators admin command.
+    usage: /zyelevators <give|reload|help>
+    aliases: [zye, elevators]
+
+permissions:
+  zyelevators.use:
+    description: Use elevators (jump to go up, sneak to go down).
+    default: true
+  zyelevators.place:
+    description: Place elevator blocks.
+    default: true
+  zyelevators.craft:
+    description: Craft elevator blocks.
+    default: true
+  zyelevators.bypass.cooldown:
+    description: Use elevators without waiting for the cooldown.
+    default: op
+  zyelevators.admin:
+    description: Use /zyelevators give and /zyelevators reload.
+    default: op

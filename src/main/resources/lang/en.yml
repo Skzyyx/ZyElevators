@@ -1,0 +1,31 @@
+# ZyElevators messages (English)
+# Format: MiniMessage, https://docs.advntr.dev/minimessage/format.html
+# Leave a message empty ("") to disable it.
+
+prefix: "<dark_gray>[<gradient:#5ee7df:#b490ca>ZyElevators</gradient>]</dark_gray> "
+
+no-permission: "<red>You don't have permission to do that."
+player-not-found: "<red>Player <white><player></white> is not online."
+invalid-block: "<red>Unknown elevator block <white><input></white>. Available: <gray><blocks></gray>"
+invalid-amount: "<red>The amount must be a number between 1 and <max>."
+given: "<green>Gave <white><amount>x</white> <block> elevator to <white><player></white>."
+reloaded: "<green>Configuration and language reloaded."
+cannot-place: "<red>You can't place elevators."
+
+# Shown in the action bar.
+cooldown: "<red>Wait <white><seconds>s</white> before using the elevator again."
+no-destination: ""
+
+help:
+  - "<gradient:#5ee7df:#b490ca><bold>ZyElevators</bold></gradient> <gray>v<version>"
+  - "<white>/zye give <player> <block> [amount]</white> <gray>Give elevators"
+  - "<white>/zye reload</white> <gray>Reload the config and language"
+
+item:
+  name: "<green><bold>Elevator</bold></green> <gray>(<block>)"
+  lore:
+    - ""
+    - "<gray>Jump to go <green>up</green>."
+    - "<gray>Sneak to go <red>down</red>."
+    - ""
+    - "<dark_gray>Place two or more in a vertical line."

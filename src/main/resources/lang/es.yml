@@ -1,0 +1,31 @@
+# Mensajes de ZyElevators (español)
+# Formato: MiniMessage, https://docs.advntr.dev/minimessage/format.html
+# Deja un mensaje vacío ("") para desactivarlo.
+
+prefix: "<dark_gray>[<gradient:#5ee7df:#b490ca>ZyElevators</gradient>]</dark_gray> "
+
+no-permission: "<red>No tienes permiso para hacer eso."
+player-not-found: "<red>El jugador <white><player></white> no está conectado."
+invalid-block: "<red>No existe el elevador <white><input></white>. Disponibles: <gray><blocks></gray>"
+invalid-amount: "<red>La cantidad debe ser un número entre 1 y <max>."
+given: "<green>Le diste <white><amount>x</white> elevador de <block> a <white><player></white>."
+reloaded: "<green>Configuración e idioma recargados."
+cannot-place: "<red>No puedes colocar elevadores."
+
+# Se muestran en la barra de acción.
+cooldown: "<red>Espera <white><seconds>s</white> para volver a usar el elevador."
+no-destination: ""
+
+help:
+  - "<gradient:#5ee7df:#b490ca><bold>ZyElevators</bold></gradient> <gray>v<version>"
+  - "<white>/zye give <jugador> <bloque> [cantidad]</white> <gray>Dar elevadores"
+  - "<white>/zye reload</white> <gray>Recargar la configuración y el idioma"
+
+item:
+  name: "<green><bold>Elevador</bold></green> <gray>(<block>)"
+  lore:
+    - ""
+    - "<gray>Salta para <green>subir</green>."
+    - "<gray>Agáchate para <red>bajar</red>."
+    - ""
+    - "<dark_gray>Coloca dos o más en línea vertical."
