@@ -1,3 +1,5 @@
+<p align="center"><img src="docs/assets/banner.png" alt="ZyElevators: jump to go up, sneak to go down"></p>
+
 # ZyElevators
 
 **Jump to go up, sneak to go down.** Lightweight block elevators for **Paper** and **Folia**.
