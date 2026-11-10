@@ -107,6 +107,17 @@ ZyElevators es un plugin de elevadores para Paper y Folia: salta para subir y ag
 para bajar. Incluye los mensajes en español; pon `language: es` en `config.yml` y usa
 `/zye reload`.
 
+Puedes usarlo en cualquier servidor (aunque tenga tienda), modificarlo y compartir tu
+versión gratis. Lo que no se permite es venderlo ni cobrar por él, tampoco por una
+versión modificada.
+
 ## License
 
-[MIT](LICENSE)
+[MIT with the Commons Clause](LICENSE). In short:
+
+- ✅ Use it on any server, including servers with a store or donations.
+- ✅ Modify it, and share your modified version for free, keeping the license.
+- ❌ Sell it, sell a modified version, or charge for it in any way (paid downloads,
+  paid bundles, "premium" re-uploads...).
+
+The [LICENSE](LICENSE) file is what applies; this list is only a summary.
