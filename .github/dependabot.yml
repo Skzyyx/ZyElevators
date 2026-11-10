@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: maven
+    directory: /
+    schedule:
+      interval: monthly
+    ignore:
+      # paper-api sets the oldest supported Minecraft version; it is raised on purpose, not automatically.
+      - dependency-name: io.papermc.paper:paper-api

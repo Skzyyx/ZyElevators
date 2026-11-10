@@ -1,0 +1,74 @@
+name: Bug report
+description: Something doesn't work as expected.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting it! Please check first that it hasn't been reported already.
+
+  - type: input
+    id: plugin-version
+    attributes:
+      label: ZyElevators version
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: server-software
+    attributes:
+      label: Server software
+      options:
+        - Folia
+        - Paper
+        - Purpur
+        - Other (write it below)
+    validations:
+      required: true
+
+  - type: input
+    id: server-version
+    attributes:
+      label: Server version
+      description: The output of `/version`.
+      placeholder: "Folia 26.1.2 build 8"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Place two white wool elevators...
+        2. Jump on the lower one...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Console errors
+      description: Paste any error from the server console, if there is one.
+      render: text
+
+  - type: textarea
+    id: config
+    attributes:
+      label: config.yml
+      description: Only if you changed it.
+      render: yaml

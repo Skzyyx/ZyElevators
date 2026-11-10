@@ -1,0 +1,60 @@
+name: PR format
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  pull-requests: read
+
+jobs:
+  pr-format:
+    name: pr-format
+    # Dependabot PRs don't use the template.
+    if: github.event.pull_request.user.login != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the PR description follows the template
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const body = (context.payload.pull_request.body || '').replace(/<!--[\s\S]*?-->/g, '');
+
+            // Split the description into "## Heading" sections.
+            const sections = {};
+            let current = null;
+            for (const line of body.split(/\r?\n/)) {
+              const heading = line.match(/^##\s+(.+?)\s*$/);
+              if (heading) {
+                current = heading[1].toLowerCase();
+                sections[current] = [];
+              } else if (current) {
+                sections[current].push(line);
+              }
+            }
+            const content = name => (sections[name] || []).join('\n').trim();
+            const problems = [];
+
+            for (const [name, title] of [['summary', 'Summary'], ['how was it tested?', 'How was it tested?']]) {
+              if (!(name in sections)) problems.push(`Missing the "## ${title}" section.`);
+              else if (!content(name)) problems.push(`The "## ${title}" section is empty.`);
+            }
+
+            if (!(('type of change') in sections)) {
+              problems.push('Missing the "## Type of change" section.');
+            } else if (!/^\s*-\s*\[x\]/im.test(content('type of change'))) {
+              problems.push('Check at least one box in "## Type of change".');
+            }
+
+            if (!('checklist' in sections)) {
+              problems.push('Missing the "## Checklist" section.');
+            } else {
+              const unchecked = (content('checklist').match(/^\s*-\s*\[ \]/gm) || []).length;
+              if (unchecked) problems.push(`${unchecked} item(s) in "## Checklist" are not checked. Check them, or delete the ones that don't apply.`);
+            }
+
+            if (problems.length) {
+              core.setFailed('The PR description does not follow the template:\n- ' + problems.join('\n- '));
+            } else {
+              core.info('The PR description follows the template.');
+            }

@@ -1,0 +1,33 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Build
+        run: mvn -B -ntp package
+
+      - name: Upload jar
+        uses: actions/upload-artifact@v7
+        with:
+          name: ZyElevators
+          path: target/ZyElevators-*.jar
+          if-no-files-found: error
