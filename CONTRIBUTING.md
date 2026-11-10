@@ -22,7 +22,8 @@ Before merging, a pull request needs:
 - the automatic Copilot review, with every review conversation resolved,
 - to be up to date with `main`.
 
-Pull requests are merged with squash.
+Pull requests are merged with squash. By opening a pull request you agree that your
+contribution is published under the project's [license](LICENSE).
 
 ## Code guidelines
 
